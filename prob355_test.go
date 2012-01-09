@@ -86,7 +86,7 @@ func prob355(n int) uint64 {
 	pv, _, fv := PrimeSieveFactor(n + 1)
 
 	if verb355 {
-		log.Print("# of Primes: ", len(pv))
+		log.Print("For ", n, " # of Primes: ", len(pv))
 		//log.Print("Factors: ", fv)
 	}
 
@@ -108,7 +108,7 @@ func prob355(n int) uint64 {
 	// sort in order of decreasing delta
 	sort.Sort(csumslice(cl))
 
-	// sum the greedy set
+	// Generate the greedy set
 	drop := make([]bool, len(fv))
 	sum, cused := sumcoprime(fv, pl, cl, drop)
 
@@ -121,8 +121,9 @@ func prob355(n int) uint64 {
 		}
 	}
 
-	// now iterate through the list and drop any of the ones we use
-	// for which the sum is larger if dropped until we an iteration with no substitutions.
+	// Now iterate through the list and test dropping each composite
+	// and any time we find one where the sum is greater drop it and
+	// repeat.
 	for {
 		found := false
 		for _, c := range cused {

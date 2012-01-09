@@ -7,6 +7,7 @@ GOFILES=\
 	gcdlcm.go\
 	init.go\
 	primes.go\
+	permute.go\
 	readers.go\
 	util.go\
 
