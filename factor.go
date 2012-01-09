@@ -2,6 +2,7 @@ package euler
 
 import (
 	. "math"
+	"log"
 )
 
 // Returns factors of n, lo, hi,2^n.
@@ -57,4 +58,28 @@ func MaxFactor(n uint64) uint64 {
 		}
 	}
 	return 0
+}
+
+func NDivisors(n int64, pv []int, cv []bool) int {
+	on := n
+	if n < 2 {
+		return 1
+	}
+	rn := int(Sqrt(float64(n)))
+	nd := 1
+	for _, pi32 := range pv {
+		if n == 1 || pi32 > rn {
+			break
+		}
+		p := int64(pi32)
+		pnd := 1
+		for n%p == 0 {
+			pnd++
+			n /= p
+		}
+		nd *= pnd
+	}
+
+	log.Print(on, nd)
+	return nd
 }

@@ -12,7 +12,7 @@ func prob018() int {
 		return -1
 	}
 
-	return TrianglePathMax(table) // cf prob067_test.go for the actual code.
+	return TrianglePathMax(table) // see prob067_test.go for the actual code.
 }
 
 func TestProb018(t *testing.T) {
