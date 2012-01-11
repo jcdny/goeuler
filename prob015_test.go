@@ -2,7 +2,6 @@ package euler
 
 import (
 	"testing"
-	"log"
 	"big"
 )
 
@@ -22,9 +21,10 @@ func prob015() string {
 }
 
 func TestProb015(t *testing.T) {
-	if prob015() != "137846528820" {
-		log.Print(prob015())
-		t.Error("Prob015 failed")
+	out := prob015()
+	t.Log("Problem 015 ", out)
+	if out != "137846528820" {
+		t.Fail()
 	}
 }
 

@@ -2,7 +2,6 @@ package euler
 
 import (
 	. "math"
-	"log"
 )
 
 // Returns factors of n, lo, hi,2^n.
@@ -61,14 +60,21 @@ func MaxFactor(n uint64) uint64 {
 }
 
 func NDivisors(n int64, pv []int, cv []bool) int {
-	on := n
-	if n < 2 {
-		return 1
+	if n < 3 {
+		return int(n)
 	}
+
+	lcv := int64(len(cv))
 	rn := int(Sqrt(float64(n)))
 	nd := 1
+
 	for _, pi32 := range pv {
-		if n == 1 || pi32 > rn {
+		if n == 1 {
+			break
+		} else if pi32 > rn || (n < lcv && !cv[n]) {
+			// using the composite flag significantly speeds things up.
+			// ~ 5x faster when we precompute sqrt(MAX(N)) primes.
+			nd *= 2
 			break
 		}
 		p := int64(pi32)
@@ -80,6 +86,6 @@ func NDivisors(n int64, pv []int, cv []bool) int {
 		nd *= pnd
 	}
 
-	log.Print(on, nd)
+	//log.Print(on, nd)
 	return nd
 }

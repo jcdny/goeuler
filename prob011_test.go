@@ -66,9 +66,10 @@ func prob011() int {
 }
 
 func TestProb011(t *testing.T) {
-	if prob011() != 70600674 {
-		log.Print(prob011())
-		t.Error("Prob011 failed")
+	out := prob011()
+	t.Log("Problem 011 ", out)
+	if out != 70600674 {
+		t.Fail()
 	}
 }
 

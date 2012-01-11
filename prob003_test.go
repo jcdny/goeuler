@@ -10,8 +10,10 @@ func prob003() uint64 {
 }
 
 func TestProb003(t *testing.T) {
-	if prob003() != 6857 {
-		t.Error("Prob003 failed")
+	out := prob003()
+	t.Log("Problem 003 ", out)
+	if out != 6857 {
+		t.Fail()
 	}
 }
 

@@ -83,7 +83,7 @@ func sumcoprime(fv [][]int, pl []int, cl []csum, drop []bool) (uint64, []int) {
 
 func prob355(n int) uint64 {
 	rn := int(Ceil(Sqrt(float64(n))))
-	pv, _, fv := PrimeSieveFactor(n + 1)
+	pv, _, fv := PrimeSieveFactors(n + 1)
 
 	if verb355 {
 		log.Print("For ", n, " # of Primes: ", len(pv))
@@ -158,8 +158,11 @@ func TestProb355(t *testing.T) {
 	for _, test := range []test355{{30, 193}, {100, 1356}, {200000, 1726545007}} {
 		// {1000000, 37717171223} takes almost a minute though
 		sum := prob355(test.n)
+		if test.n == 200000 {
+			t.Log("Problem 355 ", sum)
+		}
 		if sum != test.sum {
-			t.Error("Prob355 failed ", test, " got ", sum)
+			t.Error("Prob355  for ", test, " got ", sum)
 		}
 	}
 }

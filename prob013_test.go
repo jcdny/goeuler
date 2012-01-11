@@ -131,8 +131,10 @@ func prob013() string {
 }
 
 func TestProb013(t *testing.T) {
-	if prob013() != "5537376230" {
-		t.Error("Prob013 Failed")
+	out := prob013()
+	t.Log("Problem 013 ", out)
+	if out != "5537376230" {
+		t.Fail()
 	}
 }
 

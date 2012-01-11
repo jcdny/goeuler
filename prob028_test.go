@@ -31,9 +31,10 @@ func prob028(n int) int {
 }
 
 func TestProb028(t *testing.T) {
-	sum := prob028(500)
-	if sum != 669171001 {
-		t.Error("Prob028 failed ", sum)
+	out := prob028(500)
+	t.Log("Problem 028 ", out)
+	if out != 669171001 {
+		t.Fail()
 	}
 }
 

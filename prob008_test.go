@@ -3,7 +3,6 @@ package euler
 import (
 	"testing"
 	"strings"
-	"log"
 )
 
 func DigitProdMax(in string, n int) int {
@@ -66,9 +65,10 @@ func prob008() int {
 }
 
 func TestProb008(t *testing.T) {
-	if prob008() != 40824 {
-		log.Print(prob008())
-		t.Error("Prob008 failed")
+	out := prob008()
+	t.Log("Problem 008 ", out)
+	if out != 40824 {
+		t.Fail()
 	}
 }
 

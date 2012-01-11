@@ -2,7 +2,6 @@ package euler
 
 import (
 	"testing"
-	"log"
 )
 
 var words = map[int]string{
@@ -63,9 +62,10 @@ func prob017() int {
 }
 
 func TestProb017(t *testing.T) {
-	if prob017() != 21124 {
-		log.Print(prob017())
-		t.Error("Prob017 failed")
+	out := prob017()
+	t.Log("Problem 017 ", out)
+	if out != 21124 {
+		t.Fail()
 	}
 }
 

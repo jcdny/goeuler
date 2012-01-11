@@ -16,8 +16,10 @@ func prob001() int {
 }
 
 func TestProb001(t *testing.T) {
-	if prob001() != 233168 {
-		t.Error("Prob001 failed")
+	out := prob001()
+	t.Log("Problem 001 ", out)
+	if out != 233168 {
+		t.Fail()
 	}
 }
 

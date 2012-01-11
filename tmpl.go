@@ -11,9 +11,10 @@ func probXXX() int {
 
 func TestProbXXX(t *testing.T) {
 	out := probXXX()
+	t.Log("Problem XXX ", out)
+	log.Print("Not done")
 	if out != 0 {
-		log.Print("ProbXXX ", out)
-		t.Error("ProbXXX failed ", out)
+		t.Fail()
 	}
 }
 
