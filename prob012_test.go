@@ -4,10 +4,10 @@ import (
 	"testing"
 )
 
-func prob012(nd int) int64 {
+func prob012(nd int) uint64 {
 	pv, cv := PrimeSieve(100000)
-	n := int64(1)
-	for i := int64(2); NDivisors(n, pv, cv) < nd; n, i = n+i, i+1 {
+	n := uint64(1)
+	for i := uint64(2); NDivisors(n, pv, cv) < nd; n, i = n+i, i+1 {
 	}
 	return n
 }

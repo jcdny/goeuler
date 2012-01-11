@@ -5,9 +5,16 @@ import (
 )
 
 func BenchmarkPrimeSieve(b *testing.B) {
-	N := 1000000
+	N := 100000000
 	for i := 0; i < b.N; i++ {
 		PrimeSieve(N)
+		//log.Print(len(p), NPrimesApprox(N))
+	}
+}
+func BenchmarkPrimeSieveDivisors(b *testing.B) {
+	N := 10000000
+	for i := 0; i < b.N; i++ {
+		PrimeSieveDivisors(N)
 		//log.Print(len(p), NPrimesApprox(N))
 	}
 }

@@ -2,6 +2,7 @@ package euler
 
 import (
 	. "math"
+	//"log"
 )
 
 // Returns factors of n, lo, hi,2^n.
@@ -59,12 +60,51 @@ func MaxFactor(n uint64) uint64 {
 	return 0
 }
 
-func NDivisors(n int64, pv []int, cv []bool) int {
+func Divisors(n uint64, pv []int, cv []bool) []uint64 {
+	if n < 3 {
+		return []uint64{}
+	}
+
+	lcv := uint64(len(cv))
+	rn := int(Sqrt(float64(n)))
+	pdiv := make([]uint64, 1, 64)
+	pdiv[0] = 1
+	for _, pi32 := range pv {
+		p := uint64(pi32)
+		pnd := 1
+		if n == 1 {
+			break
+		} else if pi32 > rn || (n < lcv && !cv[n]) {
+			// using the composite flag significantly speeds things up.
+			// ~ 5x faster when we precompute sqrt(MAX(N)) primes.
+			p = n
+			pnd = 2
+			n = 1
+		} else {
+			for n%p == 0 {
+				pnd++
+				n /= p
+			}
+		}
+		if pnd > 1 {
+			lp := len(pdiv)
+			for k, pp := 0, p; k < pnd-1; k, pp = k+1, pp*p {
+				for i := 0; i < lp; i++ {
+					pdiv = append(pdiv, pdiv[i]*pp)
+				}
+			}
+		}
+	}
+
+	return pdiv
+}
+
+func NDivisors(n uint64, pv []int, cv []bool) int {
 	if n < 3 {
 		return int(n)
 	}
 
-	lcv := int64(len(cv))
+	lcv := uint64(len(cv))
 	rn := int(Sqrt(float64(n)))
 	nd := 1
 
@@ -77,7 +117,7 @@ func NDivisors(n int64, pv []int, cv []bool) int {
 			nd *= 2
 			break
 		}
-		p := int64(pi32)
+		p := uint64(pi32)
 		pnd := 1
 		for n%p == 0 {
 			pnd++
