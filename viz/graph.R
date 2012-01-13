@@ -1,0 +1,5 @@
+x <- read.csv("data.csv")
+library(ggplot2)
+x$Me <- factor(x$me)
+levels(x$Me) <- c ("no","yes")
+ggplot(x, aes(N, solved)) + geom_point(aes(color=Me)) +geom_smooth() +xlab("Problem")+scale_y_log10()+ylab("Solved By")+opts(title="Project Euler Problems")
