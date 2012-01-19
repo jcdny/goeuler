@@ -96,6 +96,7 @@ SKIP:
 
 func TestProb032(t *testing.T) {
 	out := prob032()
+	t.Log("Problem 032 ", out)
 	if out != 45228 {
 		t.Fail()
 	}
