@@ -117,7 +117,7 @@ func prob367() int {
 	return 1
 }
 
-func TestProb367(t *testing.T) {
+func xTestProb367(t *testing.T) {
 	out := prob367()
 	t.Log("Problem 367 ", out)
 	log.Print("Not done")
@@ -126,7 +126,7 @@ func TestProb367(t *testing.T) {
 	}
 }
 
-func BenchmarkProb367(b *testing.B) {
+func xBenchmarkProb367(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		prob367()
 	}
