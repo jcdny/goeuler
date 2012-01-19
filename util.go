@@ -4,10 +4,18 @@ import (
 	"big"
 )
 
+func DigitReverse(n int64) int64 {
+	rev := int64(0)
+	for n > 0 {
+		rev = rev*10 + (n % 10)
+		n /= 10
+	}
+	return rev
+}
+
 func SumDigits(z *big.Int) int {
-	s := z.String()
 	n := 0
-	for _, c := range s {
+	for _, c := range z.String() {
 		n += c - '0'
 	}
 
