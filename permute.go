@@ -63,3 +63,63 @@ func PermuteList(N []int) [][]int {
 
 	return out
 }
+
+// Permute takes a slice of ints and returns the permutations of v.
+// Transliteration of Algorithm P (plain changes) of TAoCP v4a 7.2.1.2
+// modified to use 0 based array...
+func PermuteArray(v []int, buf []int) [][]int {
+	n := len(v)
+
+	c := make([]int, len(v))
+	o := make([]int, len(v))
+
+	// n! permutations, also init o to 1
+	nperm := 1
+	for i := range v {
+		o[i] = 1
+		nperm *= (i + 1)
+	}
+
+	out := make([][]int, nperm)
+
+	if cap(buf) < nperm*n {
+		buf = make([]int, 0, nperm*n)
+	} else {
+		buf = buf[:0]
+	}
+
+	t := make([]int, len(v))
+
+	i, j, s, q := -1, 0, 0, 0
+	copy(t, v)
+P2:
+	buf = append(buf, t...)
+	i++
+	out[i] = buf[len(buf)-n : len(buf)]
+	// P3:
+	j = n - 1
+	s = 0
+P4:
+	q = c[j] + o[j]
+	if q < 0 {
+		goto P7
+	}
+	if q > j {
+		goto P6
+	}
+	// P5:
+	t[j-c[j]+s], t[j-q+s] = t[j-q+s], t[j-c[j]+s]
+	c[j] = q
+	goto P2
+P6:
+	if j == 0 {
+		return out
+	}
+	s++
+P7:
+	o[j] = -o[j]
+	j--
+	goto P4
+
+	return out
+}
