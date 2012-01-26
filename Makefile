@@ -8,6 +8,7 @@ GOFILES=\
 	init.go\
 	primes.go\
 	permute.go\
+	pythagoras.go\
 	readers.go\
 	util.go\
 

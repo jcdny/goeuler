@@ -8,6 +8,7 @@ func prob174() int {
 	N := int64(1000000)
 	// doing this with a map[int]int is 30x slower.
 	L := make([]int, N+1)
+	// biggest n we can tile has side length N/4 + 1
 	max := N/4 + 1
 	for n := int64(3); n <= max; n++ {
 		n2 := n * n
