@@ -72,6 +72,8 @@ func interiordigits(pd []uint8) [][]uint8 {
 }
 
 func prob178() int {
+	return 1
+
 	cs := [][]uint8{{9, 8, 7, 6, 5, 4, 3, 2, 1, 0}}
 	ss := cs
 	n := 1

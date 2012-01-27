@@ -4,7 +4,6 @@ import (
 	"testing"
 	"strconv"
 	"sort"
-	"log"
 )
 
 func iminhash(i int) string {
@@ -46,7 +45,6 @@ func prob049() int64 {
 func TestProb049(t *testing.T) {
 	out := prob049()
 	t.Log("Problem 049 ", out)
-	log.Print("Not done")
 	if out != 296962999629 {
 		t.Fail()
 	}
