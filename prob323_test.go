@@ -5,7 +5,7 @@ import (
 	. "math"
 )
 
-// This is basically markov chain calculation.
+// This is basically a markov chain calculation.
 func prob323() float64 {
 	// compute the binomial dist
 	binom := make([][]float64, 33)
@@ -29,12 +29,13 @@ func prob323() float64 {
 		}
 	}
 
-	// start state n=0, all in state 32 zeros
+	// start state n=0, all in state of 32 zeros
 	xn := make([]float64, 33)
 	xn[32] = 1.0
 	n1 := make([]float64, 0, 100)
 
-	// evolve state until convergence
+	// evolve state until convergence (need 10 digits after decimal
+	// place. r is the remaining fraction not all 1.
 	for n, r := 1.0, 1.0; r*n > 1e-11; n++ {
 		w := make([]float64, 33)
 
@@ -43,7 +44,7 @@ func prob323() float64 {
 				w[i] += xn[k] * e
 			}
 		}
-
+		// state 0 is the all 1 state
 		r -= w[0]
 		n1 = append(n1, w[0])
 		copy(xn, w)
