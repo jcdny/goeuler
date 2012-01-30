@@ -6,7 +6,13 @@ import (
 	"big"
 )
 
+// This is basically long division but all we care about is
+// having 0 remainder so we just loop adding digits until we
+// end up with 0 remainder.
 func RepunitDivisor(n int) int {
+	if n&1 == 0 || n%5 == 0 {
+		return 0
+	}
 	u := 1
 	ru := 1
 
@@ -24,9 +30,6 @@ func RepunitDivisor(n int) int {
 // Also we know A(n) < n so start at 1mm.
 func prob129() int {
 	for n := 1000000; n < 10000171; n++ {
-		if n&1 == 0 || n%5 == 0 {
-			continue
-		}
 		if RepunitDivisor(n) > 1000000 {
 			return n
 		}

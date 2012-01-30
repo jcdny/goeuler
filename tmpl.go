@@ -11,11 +11,7 @@ func probXXX() int {
 
 func TestProbXXX(t *testing.T) {
 	out := probXXX()
-	t.Log("Problem XXX ", out)
-	log.Print("Not done")
-	if out != 0 {
-		t.Fail()
-	}
+	Validate(t, XXX, out)
 }
 
 func BenchmarkProbXXX(b *testing.B) {
