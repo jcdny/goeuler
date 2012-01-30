@@ -2,7 +2,7 @@ package euler
 
 import (
 	"testing"
-	. "math"
+	"fmt"
 )
 
 // This is basically a markov chain calculation.
@@ -60,10 +60,8 @@ func prob323() float64 {
 
 func TestProb323(t *testing.T) {
 	out := prob323()
-	t.Log("Problem 323 ", out)
-	if Fabs(out-6.3551758451) > 1e-10 {
-		t.Fail()
-	}
+	outs := fmt.Sprintf("%.10f", out)
+	Validate(t, 323, outs)
 }
 
 func BenchmarkProb323(b *testing.B) {

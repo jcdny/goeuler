@@ -155,13 +155,12 @@ type test355 struct {
 }
 
 func TestProb355(t *testing.T) {
-	for _, test := range []test355{{30, 193}, {100, 1356}, {200000, 1726545007}} {
+	for _, test := range []test355{{30, 193}, {100, 1356}, {200000, 0}} {
 		// {1000000, 37717171223} takes almost a minute though
 		sum := prob355(test.n)
 		if test.n == 200000 {
-			t.Log("Problem 355 ", sum)
-		}
-		if sum != test.sum {
+			Validate(t, 355, sum)
+		} else if sum != test.sum {
 			t.Error("Prob355  for ", test, " got ", sum)
 		}
 	}

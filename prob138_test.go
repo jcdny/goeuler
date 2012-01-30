@@ -26,10 +26,10 @@ func prob138() string {
 }
 
 func prob138explore() {
-	// this is the really brute force version it overflows at the
+	// this is the really brute force version, it overflows at the
 	// seventh term but it's clear from the ratios of successive terms
 	// that it converges to L_n+1 = L_n * L_n/L_n-1 which also turns
-	// out to be 8*phi+5 or 17.9442719
+	// out to be 8*phi+5 or 17.9442719...
 	n := int64(0)
 	suml := n
 	l := n
@@ -65,10 +65,7 @@ func prob138explore() {
 
 func TestProb138(t *testing.T) {
 	out := prob138()
-	t.Log("Problem 138 ", out)
-	if out != "1118049290473932" {
-		t.Fail()
-	}
+	Validate(t, 138, out)
 }
 
 func BenchmarkProb138(b *testing.B) {

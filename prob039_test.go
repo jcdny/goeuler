@@ -61,15 +61,17 @@ func prob039() int {
 
 func TestProb039(t *testing.T) {
 	out := prob039()
-	prob039brute()
-	t.Log("Problem 039 ", out)
-	if out != 840 {
-		t.Fail()
-	}
+	Validate(t, 39, out)
 }
 
 func BenchmarkProb039(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		prob039()
+	}
+}
+
+func BenchmarkProb039brute(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		prob039brute()
 	}
 }

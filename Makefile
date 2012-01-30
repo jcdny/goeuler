@@ -2,6 +2,7 @@ include $(GOROOT)/src/Make.inc
 
 TARG=tables
 GOFILES=\
+	check.go\
 	doc.go\
 	factor.go\
 	gcdlcm.go\

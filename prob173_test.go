@@ -42,17 +42,12 @@ func prob173() int64 {
 
 func TestProb173(t *testing.T) {
 	out := prob173()
-	t.Log("Problem 173 ", out)
-	if out != 1572729 {
-		t.Fail()
-	}
+	Validate(t, 173, out)
 }
+
 func TestProb173brute(t *testing.T) {
 	out := prob173brute()
-	t.Log("Problem 173 ", out)
-	if out != 1572729 {
-		t.Fail()
-	}
+	Validate(t, 173, out)
 }
 
 func BenchmarkProb173(b *testing.B) {

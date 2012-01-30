@@ -35,10 +35,7 @@ func prob023() int {
 
 func TestProb023(t *testing.T) {
 	out := prob023()
-	t.Log("Problem 023 ", out)
-	if out != 4179871 {
-		t.Fail()
-	}
+	Validate(t, 23, out)
 }
 
 func BenchmarkProb023(b *testing.B) {

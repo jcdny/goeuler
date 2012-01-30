@@ -40,10 +40,7 @@ SKIP:
 
 func TestProb035(t *testing.T) {
 	out := prob035()
-	t.Log("Problem 035 ", out)
-	if out != 55 {
-		t.Fail()
-	}
+	Validate(t, 35, out)
 }
 
 func BenchmarkProb035(b *testing.B) {

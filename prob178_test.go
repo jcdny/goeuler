@@ -98,16 +98,12 @@ func prob178() int {
 		// log.Print(w)
 	}
 
-	return 1
+	return 0
 }
 
 func TestProb178(t *testing.T) {
 	out := prob178()
-	t.Log("Problem 178 ", out)
-	log.Print("Not done")
-	if out != 0 {
-		t.Fail()
-	}
+	Validate(t, 178, out)
 }
 
 func BenchmarkProb178(b *testing.B) {

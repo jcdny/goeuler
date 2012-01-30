@@ -132,16 +132,12 @@ func prob013() string {
 
 func TestProb013(t *testing.T) {
 	out := prob013()
-	t.Log("Problem 013 ", out)
-	if out != "5537376230" {
-		t.Fail()
-	}
+	Validate(t, 13, out)
 }
 
 func TestProb013bigint(t *testing.T) {
-	if prob013bigint() != "5537376230" {
-		t.Error("Prob013 Failed")
-	}
+	out := prob013bigint()
+	Validate(t, 13, out)
 }
 
 func BenchmarkProb013(b *testing.B) {

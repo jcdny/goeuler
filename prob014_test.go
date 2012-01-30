@@ -95,10 +95,7 @@ func prob014nomem() int {
 
 func TestProb014(t *testing.T) {
 	out := prob014()
-	t.Log("Problem 014 ", out)
-	if out != 837799 {
-		t.Fail()
-	}
+	Validate(t, 14, out)
 }
 
 func BenchmarkProb014(b *testing.B) {
@@ -109,9 +106,7 @@ func BenchmarkProb014(b *testing.B) {
 
 func TestProb014nomem(t *testing.T) {
 	out := prob014nomem()
-	if out != 837799 {
-		t.Error("Prob014nomem ", out)
-	}
+	Validate(t, 14, out)
 }
 
 func BenchmarkProb014nomem(b *testing.B) {

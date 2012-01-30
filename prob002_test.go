@@ -9,7 +9,8 @@ func prob002() int {
 	sum := 0
 	for n < 4e6 {
 		np, n = n, n+np
-		if n&1 == 0 { // n&1 faster than n%2, doh 6g
+		if n&1 == 0 {
+			// n&1 faster than n%2
 			sum += n
 		}
 	}
@@ -19,10 +20,7 @@ func prob002() int {
 
 func TestProb002(t *testing.T) {
 	out := prob002()
-	t.Log("Problem 002 ", out)
-	if out != 4613732 {
-		t.Fail()
-	}
+	Validate(t, 2, out)
 }
 
 func BenchmarkProb002(b *testing.B) {
