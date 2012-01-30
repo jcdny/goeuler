@@ -4,7 +4,8 @@ import (
 	"testing"
 )
 
-// Find the sum of the first forty prime factors of R(10^9).
+// Find the sum of the first twenty-five composite values of n for
+// which GCD(n, 10) = 1 and n-1 is divisible by A(n)
 func prob130() int {
 	sum := 0
 	i := 0
