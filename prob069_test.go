@@ -17,6 +17,8 @@ func TestProb069(t *testing.T) {
 
 func BenchmarkProb069(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		prob069()
+		for j := 0; j < 10000; j++ {
+			prob069()
+		}
 	}
 }
