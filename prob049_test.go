@@ -1,9 +1,9 @@
 package euler
 
 import (
-	"testing"
-	"strconv"
 	"sort"
+	"strconv"
+	"testing"
 )
 
 func iminhash(i int) string {

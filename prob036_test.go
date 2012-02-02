@@ -1,8 +1,8 @@
 package euler
 
 import (
-	"testing"
 	"strconv"
+	"testing"
 )
 
 // see Hacker's Delight chapter 7 for this

@@ -1,8 +1,8 @@
 package euler
 
 import (
-	"testing"
 	"log"
+	"testing"
 )
 
 func collatzMemo(lvec []int, sc []int64, off int) {

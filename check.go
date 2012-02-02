@@ -1,11 +1,11 @@
 package euler
 
 import (
-	"io/ioutil"
-	"strings"
-	"strconv"
 	"fmt"
+	"io/ioutil"
 	"log"
+	"strconv"
+	"strings"
 	"testing"
 )
 

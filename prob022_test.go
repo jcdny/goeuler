@@ -1,11 +1,11 @@
 package euler
 
 import (
-	"testing"
+	"io/ioutil"
 	"log"
 	"sort"
-	"io/ioutil"
 	"strings"
+	"testing"
 )
 
 func prob022() int {

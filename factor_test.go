@@ -1,9 +1,9 @@
 package euler
 
 import (
-	"testing"
-	. "math"
 	"log"
+	. "math"
+	"testing"
 )
 
 func TestNDivisors(t *testing.T) {

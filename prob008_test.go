@@ -1,8 +1,8 @@
 package euler
 
 import (
-	"testing"
 	"strings"
+	"testing"
 )
 
 func DigitProdMax(in string, n int) int {

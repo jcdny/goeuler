@@ -1,8 +1,8 @@
 package euler
 
 import (
-	"testing"
 	"strconv"
+	"testing"
 )
 
 func prob041() int {

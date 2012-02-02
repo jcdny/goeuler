@@ -1,8 +1,8 @@
 package euler
 
 import (
-	"testing"
 	. "math"
+	"testing"
 )
 
 func prob173brute() int64 {

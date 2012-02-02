@@ -1,10 +1,10 @@
 package euler
 
 import (
-	"testing"
 	"log"
-	"sort"
 	. "math"
+	"sort"
+	"testing"
 )
 
 // Junk for sorting composite sums

@@ -1,8 +1,8 @@
 package euler
 
 import (
-	"testing"
 	"log"
+	"testing"
 )
 
 func ProdMax(table [][]int, n int) int {

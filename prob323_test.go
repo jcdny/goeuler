@@ -1,8 +1,8 @@
 package euler
 
 import (
-	"testing"
 	"fmt"
+	"testing"
 )
 
 // This is basically a markov chain calculation.

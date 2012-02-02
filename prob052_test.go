@@ -1,9 +1,9 @@
 package euler
 
 import (
-	"testing"
-	"strconv"
 	"sort"
+	"strconv"
+	"testing"
 )
 
 type bsort []byte

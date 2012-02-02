@@ -1,8 +1,8 @@
 package euler
 
 import (
-	. "math"
 	"log"
+	. "math"
 )
 
 func NPrimesApprox(n int) int {

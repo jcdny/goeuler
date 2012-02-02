@@ -1,9 +1,9 @@
 package euler
 
 import (
-	"testing"
-	. "math"
 	"log"
+	. "math"
+	"testing"
 )
 
 // This is the fast version: only check those with 8+ dup digits.  I

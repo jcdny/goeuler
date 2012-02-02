@@ -1,8 +1,8 @@
 package euler
 
 import (
-	"testing"
 	"log"
+	"testing"
 )
 
 func TrianglePathMax(table [][]int) int {

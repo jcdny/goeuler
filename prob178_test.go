@@ -1,8 +1,8 @@
 package euler
 
 import (
-	"testing"
 	"log"
+	"testing"
 )
 
 func addtrailingdigit(pd []uint8) [][]uint8 {

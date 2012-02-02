@@ -1,8 +1,8 @@
 package euler
 
 import (
-	"testing"
 	"log"
+	"testing"
 )
 
 const N = 100000000
@@ -38,7 +38,7 @@ func prob357() uint64 {
 	copy(sv, cv)
 
 	// now remove any that are not a prime - 1
-	for i, _ := range sv[:len(sv)-1] {
+	for i := range sv[:len(sv)-1] {
 		sv[i] = sv[i] && !cv[i+1]
 	}
 	// as we sieve again check the candidate number

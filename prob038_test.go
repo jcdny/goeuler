@@ -1,9 +1,9 @@
 package euler
 
 import (
-	"testing"
-	"strconv"
 	"sort"
+	"strconv"
+	"testing"
 )
 
 func IsPandigital(s string) bool {
