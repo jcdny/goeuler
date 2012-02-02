@@ -2,12 +2,13 @@ package euler
 
 import (
 	"testing"
-	"log"
 )
 
 func TestPythagoreanTriples(t *testing.T) {
 	out := PythagoreanTriples(5, nil)
-	log.Print(out)
+	if len(out) != 5 {
+		t.Fail()
+	}
 }
 
 func BenchmarkPythagoreanTriples(b *testing.B) {

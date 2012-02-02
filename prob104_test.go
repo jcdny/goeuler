@@ -5,6 +5,8 @@ import (
 	"strconv"
 )
 
+// Given that Fk is the first Fibonacci number for which the first
+// nine digits AND the last nine digits are 1-9 pandigital, find k.
 func prob104() int {
 	d := make([]int, 10)
 	f0 := []int{1, 0, 0, 0, 0, 0, 0, 0, 0}

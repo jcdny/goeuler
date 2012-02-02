@@ -101,12 +101,12 @@ func prob178() int {
 	return 0
 }
 
-func TestProb178(t *testing.T) {
+func xTestProb178(t *testing.T) {
 	out := prob178()
 	Validate(t, 178, out)
 }
 
-func BenchmarkProb178(b *testing.B) {
+func xBenchmarkProb178(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		prob178()
 	}
