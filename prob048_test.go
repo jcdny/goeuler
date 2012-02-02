@@ -1,8 +1,8 @@
 package euler
 
 import (
+	"math/big"
 	"testing"
-	"big"
 )
 
 const M = 1000

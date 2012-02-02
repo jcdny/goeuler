@@ -2,13 +2,14 @@ package euler
 
 import (
 	"bufio"
-	"strconv"
-	"os"
+	"io"
 	"log"
+	"os"
+	"strconv"
 	"strings"
 )
 
-func TableIntRead(in *bufio.Reader) (table [][]int, err os.Error) {
+func TableIntRead(in *bufio.Reader) (table [][]int, err error) {
 	lines := 0
 OUT:
 	for {
@@ -40,7 +41,7 @@ OUT:
 	return
 }
 
-func TableIntReadFile(file string) (table [][]int, err os.Error) {
+func TableIntReadFile(file string) (table [][]int, err error) {
 	var f *os.File
 	f, err = os.Open(file)
 	if err != nil {
@@ -49,7 +50,7 @@ func TableIntReadFile(file string) (table [][]int, err os.Error) {
 		defer f.Close()
 		in := bufio.NewReader(f)
 		table, err = TableIntRead(in)
-		if err == os.EOF {
+		if err == io.EOF {
 			err = nil
 		}
 	}

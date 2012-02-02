@@ -1,8 +1,8 @@
 package euler
 
 import (
-	"testing"
 	"strconv"
+	"testing"
 )
 
 // Find the smallest prime which, by replacing part of the number (not
@@ -17,7 +17,8 @@ func prob051() string {
 		ps[strconv.Itoa(p)] = struct{}{}
 	}
 
-	for p := range ps {
+	for _, np := range pv {
+		p := strconv.Itoa(np)
 		b := []byte(p)
 		for _, ca := range p {
 			n := 0

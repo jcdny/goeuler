@@ -1,9 +1,9 @@
 package euler
 
 import (
-	"testing"
-	"big"
+	"math/big"
 	"strconv"
+	"testing"
 )
 
 var ints = []string{
@@ -123,11 +123,11 @@ func prob013bigint() string {
 func prob013() string {
 	a := int64(0)
 	for _, s := range ints {
-		i, _ := strconv.Atoi64(s[:11])
+		i, _ := strconv.ParseInt(s[:11], 10, 64)
 		a += i
 	}
 
-	return strconv.Itoa64(a)[:10]
+	return strconv.FormatInt(a, 10)[:10]
 }
 
 func TestProb013(t *testing.T) {

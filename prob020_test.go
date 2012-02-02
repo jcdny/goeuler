@@ -1,8 +1,8 @@
 package euler
 
 import (
+	"math/big"
 	"testing"
-	"big"
 )
 
 func prob020() int {

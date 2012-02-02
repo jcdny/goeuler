@@ -1,8 +1,8 @@
 package euler
 
 import (
-	"testing"
 	"strconv"
+	"testing"
 )
 
 // Given that Fk is the first Fibonacci number for which the first
@@ -44,7 +44,7 @@ func prob104() int {
 		if pd {
 			// we have a last 9 pandigital lets see if we have a
 			// first 9 as well...
-			s := strconv.Itoa64(tn)
+			s := strconv.FormatInt(tn, 10)
 			if IsPandigital(s[:9]) {
 				return n
 			}
@@ -57,6 +57,7 @@ func prob104() int {
 			tn /= 10
 			t1 /= 10
 		}
+
 		// swappy
 		t0, t1 = t1, tn
 		f0, f1, fn = f1, fn, f0

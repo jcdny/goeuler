@@ -1,9 +1,9 @@
 package euler
 
 import (
-	"testing"
-	"big"
+	"math/big"
 	"sort"
+	"testing"
 )
 
 type bigIntSlice []*big.Int

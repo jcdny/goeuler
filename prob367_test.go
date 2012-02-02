@@ -1,9 +1,9 @@
 package euler
 
 import (
-	"testing"
 	"log"
-	"rand"
+	"math/rand"
+	"testing"
 )
 
 func aeq(p, s []int) bool {

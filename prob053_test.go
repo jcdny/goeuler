@@ -1,8 +1,8 @@
 package euler
 
 import (
+	"math/big"
 	"testing"
-	"big"
 )
 
 func ksearch(n int64, t *big.Int) int64 {

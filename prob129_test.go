@@ -1,9 +1,9 @@
 package euler
 
 import (
-	"testing"
 	"log"
-	"big"
+	"math/big"
+	"testing"
 )
 
 // This is basically long division but all we care about is

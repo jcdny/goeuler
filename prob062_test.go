@@ -1,10 +1,10 @@
 package euler
 
 import (
-	"testing"
-	"strconv"
-	"sort"
 	"math"
+	"sort"
+	"strconv"
+	"testing"
 )
 
 func prob062() int64 {
@@ -14,7 +14,7 @@ func prob062() int64 {
 	for n := 2; n < N; n++ {
 		// compute a minhash of the cube
 		cube := int64(n) * int64(n) * int64(n)
-		b := []byte(strconv.Itoa64(cube))
+		b := []byte(strconv.FormatInt(cube, 10))
 		sort.Sort(bsort(b))
 		key := string(b)
 		mh[key]++

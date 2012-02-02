@@ -1,8 +1,8 @@
 package euler
 
 import (
+	"math/big"
 	"testing"
-	"big"
 )
 
 // Find the sum of the first forty prime factors of R(10^9).

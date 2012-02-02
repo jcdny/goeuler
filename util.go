@@ -1,7 +1,7 @@
 package euler
 
 import (
-	"big"
+	"math/big"
 )
 
 func DigitReverse(n int64) int64 {
@@ -16,7 +16,7 @@ func DigitReverse(n int64) int64 {
 func SumDigits(z *big.Int) int {
 	n := 0
 	for _, c := range z.String() {
-		n += c - '0'
+		n += int(c - '0')
 	}
 
 	return n

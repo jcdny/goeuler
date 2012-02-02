@@ -1,9 +1,9 @@
 package euler
 
 import (
-	"testing"
-	"strconv"
 	"log"
+	"strconv"
+	"testing"
 )
 
 func sumreverse(b, bo []byte) []byte {
@@ -83,7 +83,7 @@ func prob055bad() int {
 			if false && w < 0 {
 				log.Print("overflow ", n, j)
 			}
-			if Palindrome(strconv.Itoa64(w)) {
+			if Palindrome(strconv.FormatInt(w, 10)) {
 				for _, o := range orbit {
 					nlorbit[o] = true
 				}
