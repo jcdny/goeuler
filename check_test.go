@@ -22,11 +22,11 @@ func TestCheck(t *testing.T) {
 	for _, c := range test {
 		correct, solved := Check(c.p, c.ai)
 		if c.solved != solved || c.correct != correct {
-			t.Error("int", t)
+			t.Error("int", c)
 		}
 		correct, solved = Check(c.p, c.as)
 		if c.solved != solved || c.correct != correct {
-			t.Error("string", t)
+			t.Error("string", c)
 		}
 	}
 }
